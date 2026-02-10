@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="GameDay Squares - The premier NFL squares betting platform for weekly games. Easy setup, secure betting, and instant payouts.">
-    <meta name="keywords" content="NFL squares, football betting, game day, sports betting, weekly games">
+    <meta name="description" content="GameDay Squares - The premier NFL squares betting platform for weekly games. Join thousands of players in exciting football squares pools.">
+    <meta name="keywords" content="NFL squares, football betting, game day squares, sports betting, weekly pools">
     <meta name="author" content="GameDay Squares">
     <meta property="og:title" content="GameDay Squares - NFL Betting Platform">
-    <meta property="og:description" content="Join the ultimate NFL squares betting experience. Weekly games, easy setup, secure betting.">
+    <meta property="og:description" content="Join the ultimate NFL squares betting experience. Weekly games, instant payouts, and competitive pools.">
     <meta property="og:type" content="website">
-    <title>GameDay Squares - NFL Squares Betting Platform</title>
+    <meta name="robots" content="index, follow">
+    <title>GameDay Squares - Premier NFL Squares Betting Platform</title>
     
     <style>
         * {
@@ -19,10 +20,10 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Arial', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
             line-height: 1.6;
             color: #333;
-            overflow-x: hidden;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
         }
 
         .container {
@@ -33,26 +34,27 @@
 
         /* Header */
         header {
-            background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 100%);
-            color: white;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 1rem 0;
         }
 
         .logo {
             font-size: 1.8rem;
             font-weight: bold;
-            color: #ffd700;
+            color: #1e3c72;
+            text-decoration: none;
         }
 
         .nav-links {
@@ -62,140 +64,166 @@
         }
 
         .nav-links a {
-            color: white;
             text-decoration: none;
+            color: #333;
+            font-weight: 500;
             transition: color 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: #ffd700;
-        }
-
-        .mobile-menu {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 50%, #1a472a 100%);
-            color: white;
-            padding: 120px 0 80px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="%23ffffff10"/><circle cx="60" cy="40" r="1.5" fill="%23ffffff08"/><circle cx="80" cy="70" r="1" fill="%23ffffff05"/></svg>');
-            opacity: 0.3;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            color: #1e3c72;
         }
 
         .cta-button {
-            display: inline-block;
-            background: linear-gradient(45deg, #ffd700, #ffed4a);
-            color: #1a472a;
-            padding: 15px 40px;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 25px;
             text-decoration: none;
-            border-radius: 50px;
             font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
         }
 
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            color: white;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border: 2px solid white;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.4);
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #1e3c72;
         }
 
         /* Features Section */
         .features {
             padding: 80px 0;
-            background: #f8f9fa;
+            background: white;
         }
 
         .section-title {
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
-            color: #1a472a;
+            color: #1e3c72;
         }
 
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
+            margin-top: 3rem;
         }
 
         .feature-card {
             background: white;
             padding: 2rem;
             border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
 
         .feature-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #1a472a, #2d5a3d);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            font-size: 2rem;
-            color: white;
+            font-size: 3rem;
+            margin-bottom: 1rem;
         }
 
         .feature-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: #1a472a;
+            color: #1e3c72;
         }
 
         /* How It Works */
         .how-it-works {
             padding: 80px 0;
-            background: white;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
         }
 
         .steps {
@@ -207,14 +235,14 @@
 
         .step {
             text-align: center;
-            position: relative;
+            padding: 1.5rem;
         }
 
         .step-number {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, #ffd700, #ffed4a);
-            color: #1a472a;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -227,90 +255,89 @@
         .step h3 {
             font-size: 1.3rem;
             margin-bottom: 1rem;
-            color: #1a472a;
-        }
-
-        /* Demo Grid */
-        .demo-section {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        }
-
-        .demo-grid {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin-top: 2rem;
-        }
-
-        .grid-header {
-            background: #1a472a;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-            font-weight: bold;
-        }
-
-        .squares-grid {
-            display: grid;
-            grid-template-columns: repeat(11, 1fr);
-            gap: 1px;
-            background: #dee2e6;
-        }
-
-        .square {
-            aspect-ratio: 1;
-            background: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-            cursor: pointer;
-        }
-
-        .square:hover {
-            background: #e3f2fd;
-        }
-
-        .square.header {
-            background: #ffd700;
-            color: #1a472a;
-        }
-
-        .square.taken {
-            background: #4caf50;
-            color: white;
+            color: #1e3c72;
         }
 
         /* Stats Section */
         .stats {
             padding: 80px 0;
-            background: #1a472a;
+            background: #1e3c72;
             color: white;
-            text-align: center;
         }
 
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
+            text-align: center;
         }
 
         .stat-item h3 {
             font-size: 3rem;
-            color: #ffd700;
             margin-bottom: 0.5rem;
+            color: #ff6b35;
+        }
+
+        .stat-item p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid #ff6b35;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #1e3c72;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
         }
 
         /* Footer */
         footer {
-            background: #212529;
+            background: #1a1a1a;
             color: white;
-            padding: 3rem 0 1rem;
+            padding: 40px 0 20px;
         }
 
         .footer-content {
@@ -321,85 +348,82 @@
         }
 
         .footer-section h3 {
-            color: #ffd700;
             margin-bottom: 1rem;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
-            margin-bottom: 0.5rem;
+            color: #ff6b35;
         }
 
         .footer-section a {
-            color: #adb5bd;
+            color: #ccc;
             text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
             transition: color 0.3s ease;
         }
 
         .footer-section a:hover {
-            color: #ffd700;
+            color: #ff6b35;
         }
 
         .footer-bottom {
-            border-top: 1px solid #343a40;
-            padding-top: 1rem;
             text-align: center;
-            color: #6c757d;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #ccc;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: #1a472a;
-                flex-direction: column;
-                padding: 1rem;
-                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            }
-
-            .nav-links.active {
-                display: flex;
             }
 
             .mobile-menu {
-                display: block;
+                display: flex;
             }
 
-            .hero h1 {
+            .hero-content h1 {
                 font-size: 2.5rem;
             }
 
-            .hero p {
+            .hero-content p {
                 font-size: 1.1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
             }
 
             .section-title {
                 font-size: 2rem;
             }
 
-            .squares-grid {
-                font-size: 0.7rem;
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
         @media (max-width: 480px) {
-            .hero h1 {
+            .container {
+                padding: 0 15px;
+            }
+
+            .hero-content h1 {
                 font-size: 2rem;
             }
 
-            .squares-grid {
-                grid-template-columns: repeat(11, minmax(25px, 1fr));
+            .btn-primary,
+            .btn-secondary {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
             }
 
-            .square {
-                font-size: 0.6rem;
+            .stats-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -419,13 +443,14 @@
             animation: fadeInUp 0.6s ease forwards;
         }
 
-        .animate-on-scroll {
+        /* Loading Animation */
+        .loading {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(20px);
             transition: all 0.6s ease;
         }
 
-        .animate-on-scroll.in-view {
+        .loading.loaded {
             opacity: 1;
             transform: translateY(0);
         }
@@ -434,180 +459,191 @@
 <body>
     <header>
         <nav class="container">
-            <div class="logo">🏈 GameDay Squares</div>
+            <a href="#" class="logo">🏈 GameDay Squares</a>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
                 <li><a href="#features">Features</a></li>
                 <li><a href="#how-it-works">How It Works</a></li>
-                <li><a href="#demo">Demo</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <button class="mobile-menu" aria-label="Toggle menu">☰</button>
+            <a href="#signup" class="cta-button">Get Started</a>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content fade-in-up">
-                <h1>GameDay Squares</h1>
-                <p>The ultimate NFL squares betting platform. Create pools, invite friends, and win big on every touchdown!</p>
-                <a href="#demo" class="cta-button">Start Playing Now</a>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Win Big with NFL Squares</h1>
+                    <p>Join thousands of players in the most exciting NFL squares betting platform. Weekly games, instant payouts, and the thrill of victory await!</p>
+                    <div class="hero-buttons">
+                        <a href="#signup" class="btn-primary">Start Playing Now</a>
+                        <a href="#how-it-works" class="btn-secondary">Learn How</a>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="features" class="features">
-        <div class="container">
-            <h2 class="section-title animate-on-scroll">Why Choose GameDay Squares?</h2>
-            <div class="features-grid">
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Instant Setup</h3>
-                    <p>Create your squares pool in under 2 minutes. No complicated setup or configuration required.</p>
-                </div>
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">🔒</div>
-                    <h3>Secure Betting</h3>
-                    <p>Bank-level encryption and secure payment processing. Your money and data are always protected.</p>
-                </div>
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">📱</div>
-                    <h3>Mobile Friendly</h3>
-                    <p>Play anywhere, anytime. Our responsive design works perfectly on all devices.</p>
-                </div>
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">💰</div>
-                    <h3>Instant Payouts</h3>
-                    <p>Winners get paid immediately after each quarter. No waiting, no hassle.</p>
-                </div>
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">👥</div>
-                    <h3>Easy Sharing</h3>
-                    <p>Invite friends with a simple link. Share on social media or send directly via text.</p>
-                </div>
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">📊</div>
-                    <h3>Live Updates</h3>
-                    <p>Real-time score updates and winner notifications. Never miss a moment of the action.</p>
+        <section id="features" class="features">
+            <div class="container">
+                <h2 class="section-title">Why Choose GameDay Squares?</h2>
+                <div class="features-grid">
+                    <div class="feature-card loading">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Instant Payouts</h3>
+                        <p>Get paid immediately when you win. No waiting, no hassle. Your winnings are transferred instantly to your account.</p>
+                    </div>
+                    <div class="feature-card loading">
+                        <div class="feature-icon">🏆</div>
+                        <h3>Weekly Tournaments</h3>
+                        <p>Join exciting weekly tournaments with bigger prize pools and compete against players from across the country.</p>
+                    </div>
+                    <div class="feature-card loading">
+                        <div class="feature-icon">📱</div>
+                        <h3>Mobile Optimized</h3>
+                        <p>Play anywhere, anytime. Our platform is fully optimized for mobile devices with a seamless user experience.</p>
+                    </div>
+                    <div class="feature-card loading">
+                        <div class="feature-icon">🔒</div>
+                        <h3>Secure & Licensed</h3>
+                        <p>Your money and data are safe with us. We use bank-level encryption and are fully licensed and regulated.</p>
+                    </div>
+                    <div class="feature-card loading">
+                        <div class="feature-icon">👥</div>
+                        <h3>Community Driven</h3>
+                        <p>Join a vibrant community of NFL fans. Chat, share strategies, and celebrate wins together.</p>
+                    </div>
+                    <div class="feature-card loading">
+                        <div class="feature-icon">📊</div>
+                        <h3>Live Statistics</h3>
+                        <p>Track your performance with detailed statistics and analytics. See your win rate, profits, and more.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="how-it-works" class="how-it-works">
-        <div class="container">
-            <h2 class="section-title animate-on-scroll">How It Works</h2>
-            <div class="steps">
-                <div class="step animate-on-scroll">
-                    <div class="step-number">1</div>
-                    <h3>Create Your Pool</h3>
-                    <p>Set up a new squares pool for any NFL game. Choose your entry fee and payout structure.</p>
-                </div>
-                <div class="step animate-on-scroll">
-                    <div class="step-number">2</div>
-                    <h3>Invite Players</h3>
-                    <p>Share your pool link with friends, family, or coworkers. They can join with just one click.</p>
-                </div>
-                <div class="step animate-on-scroll">
-                    <div class="step-number">3</div>
-                    <h3>Pick Your Squares</h3>
-                    <p>Players select their squares on the 10x10 grid. Numbers are randomly assigned before kickoff.</p>
-                </div>
-                <div class="step animate-on-scroll">
-                    <div class="step-number">4</div>
-                    <h3>Watch & Win</h3>
-                    <p>Follow the game and see if your numbers hit. Winners are paid out automatically after each quarter.</p>
+        <section id="how-it-works" class="how-it-works">
+            <div class="container">
+                <h2 class="section-title">How It Works</h2>
+                <div class="steps">
+                    <div class="step loading">
+                        <div class="step-number">1</div>
+                        <h3>Sign Up</h3>
+                        <p>Create your free account in seconds. No credit checks, just basic information to get started.</p>
+                    </div>
+                    <div class="step loading">
+                        <div class="step-number">2</div>
+                        <h3>Choose Your Square</h3>
+                        <p>Pick your lucky squares from available NFL games. Each square represents a unique score combination.</p>
+                    </div>
+                    <div class="step loading">
+                        <div class="step-number">3</div>
+                        <h3>Watch & Win</h3>
+                        <p>Enjoy the game and watch your squares. Winners are determined by the last digit of each team's score.</p>
+                    </div>
+                    <div class="step loading">
+                        <div class="step-number">4</div>
+                        <h3>Get Paid</h3>
+                        <p>Win instantly! Payouts are processed immediately after each quarter and at the end of the game.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="demo" class="demo-section">
-        <div class="container">
-            <h2 class="section-title animate-on-scroll">Interactive Demo</h2>
-            <p style="text-align: center; margin-bottom: 2rem;">Click on any available square to see how it works!</p>
-            <div class="demo-grid animate-on-scroll">
-                <div class="grid-header">
-                    Chiefs vs Bills - Sunday Night Football
-                </div>
-                <div class="squares-grid" id="demoGrid">
-                    <!-- Grid will be generated by JavaScript -->
+        <section class="stats">
+            <div class="container">
+                <h2 class="section-title">Join Thousands of Winners</h2>
+                <div class="stats-grid">
+                    <div class="stat-item loading">
+                        <h3>50K+</h3>
+                        <p>Active Players</p>
+                    </div>
+                    <div class="stat-item loading">
+                        <h3>$2M+</h3>
+                        <p>Paid Out</p>
+                    </div>
+                    <div class="stat-item loading">
+                        <h3>98%</h3>
+                        <p>Satisfaction Rate</p>
+                    </div>
+                    <div class="stat-item loading">
+                        <h3>24/7</h3>
+                        <p>Customer Support</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="stats">
-        <div class="container">
-            <h2 class="section-title animate-on-scroll">Join Thousands of Players</h2>
-            <div class="stats-grid">
-                <div class="stat-item animate-on-scroll">
-                    <h3 id="poolsCount">1,247</h3>
-                    <p>Active Pools</p>
-                </div>
-                <div class="stat-item animate-on-scroll">
-                    <h3 id="playersCount">15,623</h3>
-                    <p>Happy Players</p>
-                </div>
-                <div class="stat-item animate-on-scroll">
-                    <h3 id="payoutAmount">$2.1M</h3>
-                    <p>Total Payouts</p>
-                </div>
-                <div class="stat-item animate-on-scroll">
-                    <h3>99.9%</h3>
-                    <p>Uptime</p>
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+                <h2 class="section-title">What Players Are Saying</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial loading">
+                        <p class="testimonial-text">"I've been playing NFL squares for years, but GameDay Squares takes it to the next level. The instant payouts are amazing!"</p>
+                        <p class="testimonial-author">- Sarah M., Chicago</p>
+                    </div>
+                    <div class="testimonial loading">
+                        <p class="testimonial-text">"The mobile app is fantastic. I can play from anywhere and never miss a game. Already won $500 this season!"</p>
+                        <p class="testimonial-author">- Mike D., Dallas</p>
+                    </div>
+                    <div class="testimonial loading">
+                        <p class="testimonial-text">"Safe, secure, and so much fun! The community aspect makes watching games even more exciting."</p>
+                        <p class="testimonial-author">- Jennifer L., New York</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section id="signup" class="cta-section">
+            <div class="container">
+                <h2>Ready to Start Winning?</h2>
+                <p>Join GameDay Squares today and turn every NFL game into an opportunity to win big!</p>
+                <a href="#" class="btn-primary" id="signup-btn">Create Free Account</a>
+            </div>
+        </section>
+    </main>
 
     <footer id="contact">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>🏈 GameDay Squares</h3>
-                    <p>The premier destination for NFL squares betting. Join the excitement every game day!</p>
+                    <h3>GameDay Squares</h3>
+                    <p>The premier destination for NFL squares betting. Safe, secure, and incredibly fun.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#how-it-works">How It Works</a></li>
-                        <li><a href="#demo">Demo</a></li>
-                        <li><a href="#pricing">Pricing</a></li>
-                    </ul>
+                    <a href="#">How to Play</a>
+                    <a href="#">Rules & Payouts</a>
+                    <a href="#">Responsible Gaming</a>
+                    <a href="#">FAQ</a>
                 </div>
                 <div class="footer-section">
                     <h3>Support</h3>
-                    <ul>
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Rules & Regulations</a></li>
-                        <li><a href="#">Responsible Gaming</a></li>
-                    </ul>
+                    <a href="#">Help Center</a>
+                    <a href="#">Contact Us</a>
+                    <a href="#">Live Chat</a>
+                    <a href="#">Report Issue</a>
                 </div>
                 <div class="footer-section">
                     <h3>Legal</h3>
-                    <ul>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
-                        <li><a href="#">Disclaimer</a></li>
-                    </ul>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">License Info</a>
+                    <a href="#">Security</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 GameDay Squares. All rights reserved. | 21+ only. Please play responsibly.</p>
+                <p>&copy; 2024 GameDay Squares. All rights reserved. Play responsibly. Must be 21+ to participate.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile menu toggle
-        document.querySelector('.mobile-menu').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -619,140 +655,175 @@
                         block: 'start'
                     });
                 }
-                // Close mobile menu if open
-                document.querySelector('.nav-links').classList.remove('active');
             });
         });
 
-        // Animate elements on scroll
+        // Mobile menu toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Intersection Observer for animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
 
-        const observer = new IntersectionObserver(function(entries) {
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('in-view');
+                    entry.target.classList.add('loaded');
                 }
             });
         }, observerOptions);
 
-        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        // Observe all loading elements
+        document.querySelectorAll('.loading').forEach(el => {
             observer.observe(el);
         });
 
-        // Generate demo grid
-        function generateDemoGrid() {
-            const grid = document.getElementById('demoGrid');
-            const teams = ['Chiefs', 'Bills'];
-            const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-            
-            // Shuffle numbers for demo
-            const shuffledTeam1 = [...numbers].sort(() => Math.random() - 0.5);
-            const shuffledTeam2 = [...numbers].sort(() => Math.random() - 0.5);
-            
-            // Create header row
-            grid.innerHTML = '<div class="square header"></div>';
-            shuffledTeam1.forEach(num => {
-                grid.innerHTML += `<div class="square header">${num}</div>`;
-            });
-            
-            // Create grid rows
-            for (let i = 0; i < 10; i++) {
-                grid.innerHTML += `<div class="square header">${shuffledTeam2[i]}</div>`;
-                for (let j = 0; j < 10; j++) {
-                    const isAlreadyTaken = Math.random() < 0.3;
-                    const playerName = isAlreadyTaken ? ['John D.', 'Sarah M.', 'Mike R.', 'Lisa K.', 'Tom W.'][Math.floor(Math.random() * 5)] : '';
-                    grid.innerHTML += `<div class="square ${isAlreadyTaken ? 'taken' : ''}" data-coords="${shuffledTeam2[i]}-${shuffledTeam1[j]}">${playerName}</div>`;
-                }
-            }
-            
-            // Add click handlers for available squares
-            document.querySelectorAll('.square:not(.header):not(.taken)').forEach(square => {
-                square.addEventListener('click', function() {
-                    if (!this.classList.contains('taken')) {
-                        this.classList.add('taken');
-                        this.textContent = 'You!';
-                        this.style.background = '#2196f3';
-                        
-                        // Show success message
-                        const coords = this.getAttribute('data-coords');
-                        setTimeout(() => {
-                            alert(`Great! You've claimed square ${coords}. In a real game, you'd pay the entry fee and wait for the numbers to be set!`);
-                        }, 100);
-                    }
-                });
-            });
-        }
-
-        // Animated counters
-        function animateCounter(element, target, duration = 2000) {
-            const start = 0;
-            const increment = target / (duration / 16);
-            let current = start;
-            
+        // Counter animation for stats
+        function animateCounter(element, target) {
+            let count = 0;
+            const increment = target / 100;
             const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    current = target;
+                count += increment;
+                if (count >= target) {
+                    count = target;
                     clearInterval(timer);
                 }
                 
-                if (element.id === 'payoutAmount') {
-                    element.textContent = '$' + (current / 1000000).toFixed(1) + 'M';
+                if (target >= 1000000) {
+                    element.textContent = '$' + (count / 1000000).toFixed(1) + 'M+';
+                } else if (target >= 1000) {
+                    element.textContent = (count / 1000).toFixed(0) + 'K+';
+                } else if (target >= 90) {
+                    element.textContent = count.toFixed(0) + '%';
                 } else {
-                    element.textContent = Math.floor(current).toLocaleString();
+                    element.textContent = count.toFixed(0);
                 }
-            }, 16);
+            }, 20);
         }
 
-        // Start counters when stats section is visible
-        const statsObserver = new IntersectionObserver(function(entries) {
+        // Animate stats when they come into view
+        const statsObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    animateCounter(document.getElementById('poolsCount'), 1247);
-                    animateCounter(document.getElementById('playersCount'), 15623);
-                    animateCounter(document.getElementById('payoutAmount'), 2100000);
+                    const statItems = entry.target.querySelectorAll('.stat-item h3');
+                    const targets = [50000, 2000000, 98, 24];
+                    
+                    statItems.forEach((item, index) => {
+                        setTimeout(() => {
+                            animateCounter(item, targets[index]);
+                        }, index * 200);
+                    });
+                    
                     statsObserver.unobserve(entry.target);
                 }
             });
-        });
+        }, observerOptions);
 
-        document.querySelector('.stats').addEventListener('DOMContentLoaded', () => {
-            statsObserver.observe(document.querySelector('.stats'));
-        });
+        const statsSection = document.querySelector('.stats');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
 
-        // Initialize when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            generateDemoGrid();
-            statsObserver.observe(document.querySelector('.stats'));
-            
-            // Add some dynamic effects
-            setInterval(() => {
-                const availableSquares = document.querySelectorAll('.square:not(.header):not(.taken)');
-                if (availableSquares.length > 0 && Math.random() < 0.1) {
-                    const randomSquare = availableSquares[Math.floor(Math.random() * availableSquares.length)];
-                    const names = ['Alex P.', 'Jordan M.', 'Casey R.', 'Riley K.', 'Taylor S.'];
-                    randomSquare.classList.add('taken');
-                    randomSquare.textContent = names[Math.floor(Math.random() * names.length)];
-                }
-            }, 3000);
-        });
-
-        // Add floating animation to hero section
-        document.addEventListener('DOMContentLoaded', function() {
-            const hero = document.querySelector('.hero');
-            let mouseX = 0;
-            let mouseY = 0;
-            
-            hero.addEventListener('mousemove', (e) => {
-                mouseX = (e.clientX - window.innerWidth / 2) * 0.01;
-                mouseY = (e.clientY - window.innerHeight / 2) * 0.01;
+        // Add click tracking for CTA buttons
+        document.querySelectorAll('.cta-button, .btn-primary, .btn-secondary').forEach(button => {
+            button.addEventListener('click', function(e) {
+                // Add ripple effect
+                const ripple = document.createElement('span');
+                ripple.style.position = 'absolute';
+                ripple.style.borderRadius = '50%';
+                ripple.style.background = 'rgba(255,255,255,0.6)';
+                ripple.style.transform = 'scale(0)';
+                ripple.style.animation = 'ripple 0.6s linear';
+                ripple.style.left = (e.clientX - this.offsetLeft) + 'px';
+                ripple.style.top = (e.clientY - this.offsetTop) + 'px';
                 
-                hero.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+                this.style.position = 'relative';
+                this.style.overflow = 'hidden';
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+
+                // Simulate signup process
+                if (this.id === 'signup-btn' || this.textContent.includes('Get Started') || this.textContent.includes('Start Playing')) {
+                    e.preventDefault();
+                    this.textContent = 'Loading...';
+                    this.style.opacity = '0.8';
+                    
+                    setTimeout(() => {
+                        alert('Welcome to GameDay Squares! Your account setup would begin here.');
+                        this.textContent = 'Create Free Account';
+                        this.style.opacity = '1';
+                    }, 2000);
+                }
             });
         });
+
+        // Add CSS for ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Header background change on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Preload critical images and optimize performance
+        window.addEventListener('load', () => {
+            // Mark all elements as loaded for any missed by intersection observer
+            document.querySelectorAll('.loading').forEach(el => {
+                el.classList.add('loaded');
+            });
+        });
+
+        // Add form validation for email signup (if implemented)
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        // Keyboard navigation support
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Tab') {
+                document.body.classList.add('keyboard-navigation');
+            }
+        });
+
+        document.addEventListener('mousedown', () => {
+            document.body.classList.remove('keyboard-navigation');
+        });
+
+        // Add focus styles for keyboard navigation
+        const focusStyle = document.createElement('style');
+        focusStyle.textContent = `
+            .keyboard-navigation button:focus,
+            .keyboard-navigation a:focus {
+                outline: 2px solid #ff6b35;
+                outline-offset: 2px;
+            }
+        `;
+        document.head.appendChild(focusStyle);
     </script>
 </body>
 </html>
