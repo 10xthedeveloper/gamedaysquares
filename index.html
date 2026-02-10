@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="GameDay Squares - The ultimate NFL squares betting platform for weekly games. Join pools, compete with friends, and win big every game day.">
-    <meta name="keywords" content="NFL squares, football betting, game day, squares pool, NFL games, sports betting">
+    <meta name="description" content="GameDay Squares - The ultimate NFL squares betting platform for weekly games. Join pools, place bets, and win big every Sunday!">
+    <meta name="keywords" content="NFL squares, football betting, game day, sports betting, NFL pools">
     <meta name="author" content="GameDay Squares">
     <meta property="og:title" content="GameDay Squares - NFL Squares Betting Platform">
-    <meta property="og:description" content="Join the best NFL squares betting platform for weekly games. Easy setup, fair play, instant payouts.">
+    <meta property="og:description" content="Join the excitement of NFL squares betting with GameDay Squares. Create pools, invite friends, and win big every game day!">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://gamedaysquares.com">
-    <meta name="twitter:card" content="summary_large_image">
     <title>GameDay Squares - NFL Squares Betting Platform</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,21 +19,27 @@
 </head>
 <body>
     <header class="header">
-        <nav class="nav container">
-            <div class="nav-brand">
-                <span class="logo">🏈</span>
-                <span class="brand-text">GameDay Squares</span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#features" class="nav-link">Features</a></li>
-                <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
-                <li><a href="#pricing" class="nav-link">Pricing</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="nav-toggle" id="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <span class="logo">🏈</span>
+                    <span class="brand-text">GameDay Squares</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#features" class="nav-link">Features</a></li>
+                    <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+                    <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="btn btn-outline">Log In</button>
+                    <button class="btn btn-primary">Sign Up</button>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </nav>
     </header>
@@ -43,11 +48,11 @@
         <section class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h1 class="hero-title">The Ultimate NFL Squares Platform</h1>
-                    <p class="hero-subtitle">Join weekly squares pools, compete with friends, and turn every touchdown into a potential win. Fair play guaranteed.</p>
-                    <div class="hero-cta">
-                        <button class="btn btn-primary">Start Playing Now</button>
-                        <button class="btn btn-secondary">Watch Demo</button>
+                    <h1 class="hero-title">Turn Every NFL Game Into Your <span class="highlight">Winning Moment</span></h1>
+                    <p class="hero-description">Join thousands of fans in the ultimate NFL squares betting experience. Create pools, invite friends, and make every touchdown count with GameDay Squares.</p>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary btn-large">Start Playing Now</button>
+                        <button class="btn btn-outline btn-large">Watch Demo</button>
                     </div>
                     <div class="hero-stats">
                         <div class="stat">
@@ -56,44 +61,32 @@
                         </div>
                         <div class="stat">
                             <span class="stat-number">$2M+</span>
-                            <span class="stat-label">Payouts</span>
+                            <span class="stat-label">Prizes Won</span>
                         </div>
                         <div class="stat">
-                            <span class="stat-number">99.9%</span>
-                            <span class="stat-label">Uptime</span>
+                            <span class="stat-number">10K+</span>
+                            <span class="stat-label">Weekly Pools</span>
                         </div>
                     </div>
                 </div>
                 <div class="hero-visual">
                     <div class="squares-grid">
-                        <div class="grid-row">
-                            <div class="grid-cell"></div>
-                            <div class="grid-cell">0</div>
-                            <div class="grid-cell">1</div>
-                            <div class="grid-cell">2</div>
-                            <div class="grid-cell">3</div>
-                        </div>
-                        <div class="grid-row">
-                            <div class="grid-cell">0</div>
-                            <div class="grid-cell winner">John</div>
-                            <div class="grid-cell">Sarah</div>
-                            <div class="grid-cell">Mike</div>
-                            <div class="grid-cell">Lisa</div>
-                        </div>
-                        <div class="grid-row">
-                            <div class="grid-cell">1</div>
-                            <div class="grid-cell">Alex</div>
-                            <div class="grid-cell">Tom</div>
-                            <div class="grid-cell">Emma</div>
-                            <div class="grid-cell">Dave</div>
-                        </div>
-                        <div class="grid-row">
-                            <div class="grid-cell">2</div>
-                            <div class="grid-cell">Chris</div>
-                            <div class="grid-cell">Anna</div>
-                            <div class="grid-cell">Mark</div>
-                            <div class="grid-cell">Kate</div>
-                        </div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square active"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square winner"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
                     </div>
                 </div>
             </div>
@@ -101,37 +94,40 @@
 
         <section id="features" class="features">
             <div class="container">
-                <h2 class="section-title">Why Choose GameDay Squares?</h2>
+                <div class="section-header">
+                    <h2 class="section-title">Why Choose GameDay Squares?</h2>
+                    <p class="section-subtitle">Everything you need for the perfect NFL squares experience</p>
+                </div>
                 <div class="features-grid">
                     <div class="feature-card">
                         <div class="feature-icon">⚡</div>
-                        <h3 class="feature-title">Lightning Fast Setup</h3>
-                        <p class="feature-description">Create your squares pool in under 60 seconds. No complicated forms or lengthy registration process.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🔒</div>
-                        <h3 class="feature-title">Secure & Fair</h3>
-                        <p class="feature-description">Bank-level security with transparent algorithms. Every game is fair and every payout is guaranteed.</p>
+                        <h3 class="feature-title">Instant Pool Creation</h3>
+                        <p class="feature-description">Set up your NFL squares pool in seconds. Customize rules, entry fees, and prize distribution with our intuitive interface.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">📱</div>
                         <h3 class="feature-title">Mobile Optimized</h3>
-                        <p class="feature-description">Perfect experience on any device. Manage your pools and track games from anywhere.</p>
+                        <p class="feature-description">Manage your pools and track games from anywhere. Our mobile-first design ensures a seamless experience on all devices.</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">💰</div>
-                        <h3 class="feature-title">Instant Payouts</h3>
-                        <p class="feature-description">Winners get paid immediately after each quarter. No waiting, no hassle, just instant rewards.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">👥</div>
-                        <h3 class="feature-title">Social Integration</h3>
-                        <p class="feature-description">Invite friends, create private pools, and compete with your crew every game day.</p>
+                        <div class="feature-icon">🔒</div>
+                        <h3 class="feature-title">Secure Payments</h3>
+                        <p class="feature-description">Bank-grade security for all transactions. Multiple payment options with instant payouts to winners.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">📊</div>
                         <h3 class="feature-title">Real-time Updates</h3>
-                        <p class="feature-description">Live score tracking and automatic winner determination. Never miss a moment of the action.</p>
+                        <p class="feature-description">Live score tracking and automatic winner detection. Never miss a moment of the action with push notifications.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">👥</div>
+                        <h3 class="feature-title">Social Integration</h3>
+                        <p class="feature-description">Invite friends easily through social media or email. Built-in chat and leaderboards enhance the community experience.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏆</div>
+                        <h3 class="feature-title">Multiple Game Types</h3>
+                        <p class="feature-description">Classic squares, reverse scoring, and custom variants. Something for every type of football fan.</p>
                     </div>
                 </div>
             </div>
@@ -139,34 +135,30 @@
 
         <section id="how-it-works" class="how-it-works">
             <div class="container">
-                <h2 class="section-title">How It Works</h2>
+                <div class="section-header">
+                    <h2 class="section-title">How It Works</h2>
+                    <p class="section-subtitle">Get started in three simple steps</p>
+                </div>
                 <div class="steps">
                     <div class="step">
                         <div class="step-number">1</div>
                         <div class="step-content">
                             <h3 class="step-title">Create Your Pool</h3>
-                            <p class="step-description">Set up a new squares pool for any NFL game. Choose your buy-in amount and payout structure.</p>
+                            <p class="step-description">Choose your game, set the entry fee, and customize your squares pool settings.</p>
                         </div>
                     </div>
                     <div class="step">
                         <div class="step-number">2</div>
                         <div class="step-content">
                             <h3 class="step-title">Invite Players</h3>
-                            <p class="step-description">Share your pool link with friends or join public pools. Fill all 100 squares before game time.</p>
+                            <p class="step-description">Share your unique pool code with friends, family, or colleagues via text, email, or social media.</p>
                         </div>
                     </div>
                     <div class="step">
                         <div class="step-number">3</div>
                         <div class="step-content">
-                            <h3 class="step-title">Numbers Are Drawn</h3>
-                            <p class="step-description">Random numbers are assigned to each row and column automatically before kickoff.</p>
-                        </div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <h3 class="step-title">Win & Get Paid</h3>
-                            <p class="step-description">Winners are determined by the last digit of each team's score at the end of each quarter.</p>
+                            <h3 class="step-title">Watch & Win</h3>
+                            <p class="step-description">Follow the game with real-time updates and automatic winner detection. Prizes are distributed instantly!</p>
                         </div>
                     </div>
                 </div>
@@ -175,55 +167,67 @@
 
         <section id="pricing" class="pricing">
             <div class="container">
-                <h2 class="section-title">Simple, Transparent Pricing</h2>
+                <div class="section-header">
+                    <h2 class="section-title">Simple, Transparent Pricing</h2>
+                    <p class="section-subtitle">Choose the plan that works for you</p>
+                </div>
                 <div class="pricing-grid">
                     <div class="pricing-card">
-                        <h3 class="pricing-title">Free</h3>
-                        <div class="pricing-price">$0<span class="pricing-period">/month</span></div>
+                        <div class="pricing-header">
+                            <h3 class="pricing-title">Free</h3>
+                            <div class="pricing-price">$0<span class="pricing-period">/month</span></div>
+                        </div>
                         <ul class="pricing-features">
-                            <li>Create up to 3 pools/month</li>
-                            <li>Up to 25 players per pool</li>
-                            <li>Basic support</li>
-                            <li>Standard payouts</li>
+                            <li>Up to 2 pools per week</li>
+                            <li>25 players per pool</li>
+                            <li>Basic customization</li>
+                            <li>Email support</li>
                         </ul>
-                        <button class="btn btn-outline">Get Started</button>
+                        <button class="btn btn-outline btn-full">Get Started</button>
                     </div>
                     <div class="pricing-card pricing-card-featured">
                         <div class="pricing-badge">Most Popular</div>
-                        <h3 class="pricing-title">Pro</h3>
-                        <div class="pricing-price">$9.99<span class="pricing-period">/month</span></div>
+                        <div class="pricing-header">
+                            <h3 class="pricing-title">Pro</h3>
+                            <div class="pricing-price">$9.99<span class="pricing-period">/month</span></div>
+                        </div>
                         <ul class="pricing-features">
                             <li>Unlimited pools</li>
-                            <li>Up to 100 players per pool</li>
+                            <li>100 players per pool</li>
+                            <li>Advanced customization</li>
                             <li>Priority support</li>
-                            <li>Instant payouts</li>
                             <li>Custom branding</li>
-                            <li>Advanced analytics</li>
+                            <li>Analytics dashboard</li>
                         </ul>
-                        <button class="btn btn-primary">Start Free Trial</button>
+                        <button class="btn btn-primary btn-full">Start Free Trial</button>
                     </div>
                     <div class="pricing-card">
-                        <h3 class="pricing-title">Enterprise</h3>
-                        <div class="pricing-price">Custom</div>
+                        <div class="pricing-header">
+                            <h3 class="pricing-title">Enterprise</h3>
+                            <div class="pricing-price">Custom</div>
+                        </div>
                         <ul class="pricing-features">
-                            <li>White-label solution</li>
                             <li>Unlimited everything</li>
-                            <li>24/7 dedicated support</li>
+                            <li>White-label solution</li>
+                            <li>API access</li>
+                            <li>Dedicated support</li>
                             <li>Custom integrations</li>
-                            <li>SLA guarantee</li>
                         </ul>
-                        <button class="btn btn-outline">Contact Sales</button>
+                        <button class="btn btn-outline btn-full">Contact Sales</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="cta-section">
+        <section class="cta">
             <div class="container">
                 <div class="cta-content">
-                    <h2 class="cta-title">Ready to Make Every Game More Exciting?</h2>
-                    <p class="cta-subtitle">Join thousands of NFL fans who are already winning with GameDay Squares.</p>
-                    <button class="btn btn-primary btn-large">Start Your First Pool</button>
+                    <h2 class="cta-title">Ready to Make Every Game Day Epic?</h2>
+                    <p class="cta-description">Join thousands of NFL fans who are already winning with GameDay Squares</p>
+                    <div class="cta-actions">
+                        <button class="btn btn-primary btn-large">Start Your First Pool</button>
+                        <p class="cta-note">Free to start • No credit card required</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -232,43 +236,72 @@
     <footer id="contact" class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-brand">
+                <div class="footer-brand">
+                    <div class="footer-logo">
                         <span class="logo">🏈</span>
                         <span class="brand-text">GameDay Squares</span>
                     </div>
-                    <p class="footer-description">The premier platform for NFL squares betting. Fair, secure, and exciting.</p>
+                    <p class="footer-description">The ultimate NFL squares betting platform for fans who want to win big every game day.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987 6.62 0 11.987-5.367 11.987-11.987C24.014 5.367 18.637.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.73-3.016-1.804C4.868 14.48 4.618 13.12 4.618 11.987s.25-2.493.815-3.197C5.999 7.716 7.15 6.986 8.449 6.986c1.297 0 2.448.73 3.016 1.804.565.704.815 2.064.815 3.197s-.25 2.493-.815 3.197c-.568 1.074-1.719 1.804-3.016 1.804zm7.138 0c-1.297 0-2.448-.73-3.016-1.804-.565-.704-.815-2.064-.815-3.197s.25-2.493.815-3.197c.568-1.074 1.719-1.804 3.016-1.804 1.297 0 2.448.73 3.016 1.804.565.704.815 2.064.815 3.197s-.25 2.493-.815 3.197c-.568 1.074-1.719 1.804-3.016 1.804z"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
-                <div class="footer-section">
-                    <h4 class="footer-title">Product</h4>
-                    <ul class="footer-links">
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#pricing">Pricing</a></li>
-                        <li><a href="#">Mobile App</a></li>
-                        <li><a href="#">API</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4 class="footer-title">Company</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Press</a></li>
-                        <li><a href="#">Blog</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4 class="footer-title">Support</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Status</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                    </ul>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 class="footer-column-title">Product</h4>
+                        <ul class="footer-link-list">
+                            <li><a href="#" class="footer-link">Features</a></li>
+                            <li><a href="#" class="footer-link">Pricing</a></li>
+                            <li><a href="#" class="footer-link">Demo</a></li>
+                            <li><a href="#" class="footer-link">API</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-column-title">Support</h4>
+                        <ul class="footer-link-list">
+                            <li><a href="#" class="footer-link">Help Center</a></li>
+                            <li><a href="#" class="footer-link">Contact Us</a></li>
+                            <li><a href="#" class="footer-link">Rules & Regulations</a></li>
+                            <li><a href="#" class="footer-link">Responsible Gaming</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-column-title">Company</h4>
+                        <ul class="footer-link-list">
+                            <li><a href="#" class="footer-link">About</a></li>
+                            <li><a href="#" class="footer-link">Blog</a></li>
+                            <li><a href="#" class="footer-link">Careers</a></li>
+                            <li><a href="#" class="footer-link">Press</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-column-title">Legal</h4>
+                        <ul class="footer-link-list">
+                            <li><a href="#" class="footer-link">Privacy Policy</a></li>
+                            <li><a href="#" class="footer-link">Terms of Service</a></li>
+                            <li><a href="#" class="footer-link">Cookie Policy</a></li>
+                            <li><a href="#" class="footer-link">GDPR</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 GameDay Squares. All rights reserved.</p>
+                <p class="footer-copyright">&copy; 2024 GameDay Squares. All rights reserved.</p>
+                <p class="footer-disclaimer">Please play responsibly. Must be 18+ to participate.</p>
             </div>
         </div>
     </footer>
