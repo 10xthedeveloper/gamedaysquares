@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="GameDay Squares - The premier NFL squares betting platform for weekly games. Join thousands of players in exciting football squares pools.">
-    <meta name="keywords" content="NFL squares, football betting, game day squares, sports betting, weekly pools">
+    <meta name="description" content="GameDay Squares - The ultimate NFL squares betting platform for weekly games. Join thousands of players and win big every Sunday!">
+    <meta name="keywords" content="NFL squares, football betting, sports betting, game day, weekly games">
     <meta name="author" content="GameDay Squares">
     <meta property="og:title" content="GameDay Squares - NFL Betting Platform">
-    <meta property="og:description" content="Join the ultimate NFL squares betting experience. Weekly games, instant payouts, and competitive pools.">
+    <meta property="og:description" content="Join the ultimate NFL squares betting platform for weekly games">
     <meta property="og:type" content="website">
-    <meta name="robots" content="index, follow">
-    <title>GameDay Squares - Premier NFL Squares Betting Platform</title>
+    <title>GameDay Squares - NFL Squares Betting Platform</title>
     
     <style>
         * {
@@ -19,11 +18,24 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --primary-color: #1a472a;
+            --secondary-color: #2d7a3d;
+            --accent-color: #ffb300;
+            --text-light: #ffffff;
+            --text-dark: #333333;
+            --bg-light: #f8f9fa;
+            --bg-dark: #1a1a1a;
+            --gradient: linear-gradient(135deg, #1a472a 0%, #2d7a3d 100%);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --border-radius: 12px;
+        }
+
         body {
-            font-family: 'Arial', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: var(--text-dark);
+            overflow-x: hidden;
         }
 
         .container {
@@ -34,64 +46,70 @@
 
         /* Header */
         header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background: var(--gradient);
+            color: var(--text-light);
+            padding: 1rem 0;
             position: fixed;
             top: 0;
-            width: 100%;
+            left: 0;
+            right: 0;
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .header-scrolled {
+            background: rgba(26, 71, 42, 0.95);
+            backdrop-filter: blur(10px);
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 0;
         }
 
         .logo {
             font-size: 1.8rem;
             font-weight: bold;
-            color: #1e3c72;
-            text-decoration: none;
+            color: var(--accent-color);
         }
 
         .nav-links {
             display: flex;
             list-style: none;
             gap: 2rem;
+            align-items: center;
         }
 
         .nav-links a {
+            color: var(--text-light);
             text-decoration: none;
-            color: #333;
             font-weight: 500;
             transition: color 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: #1e3c72;
+            color: var(--accent-color);
         }
 
         .cta-button {
-            background: linear-gradient(45deg, #ff6b35, #f7931e);
-            color: white;
-            padding: 0.8rem 1.5rem;
+            background: var(--accent-color);
+            color: var(--text-dark);
+            padding: 0.75rem 1.5rem;
             border: none;
-            border-radius: 25px;
-            text-decoration: none;
+            border-radius: var(--border-radius);
             font-weight: bold;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            transition: all 0.3s ease;
             cursor: pointer;
         }
 
         .cta-button:hover {
+            background: #e6a000;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
         }
 
-        /* Mobile Menu */
         .mobile-menu {
             display: none;
             flex-direction: column;
@@ -101,35 +119,49 @@
         .mobile-menu span {
             width: 25px;
             height: 3px;
-            background: #333;
+            background: var(--text-light);
             margin: 3px 0;
             transition: 0.3s;
         }
 
         /* Hero Section */
         .hero {
+            background: var(--gradient);
+            color: var(--text-light);
             padding: 120px 0 80px;
             text-align: center;
-            color: white;
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
+            position: relative;
+            overflow: hidden;
         }
 
-        .hero-content h1 {
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
             font-size: 3.5rem;
+            font-weight: bold;
             margin-bottom: 1rem;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease;
         }
 
-        .hero-content p {
-            font-size: 1.3rem;
+        .hero p {
+            font-size: 1.25rem;
             margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
             opacity: 0.9;
+            animation: fadeInUp 1s ease 0.2s both;
         }
 
         .hero-buttons {
@@ -137,14 +169,15 @@
             gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.4s both;
         }
 
         .btn-primary {
-            background: linear-gradient(45deg, #ff6b35, #f7931e);
-            color: white;
+            background: var(--accent-color);
+            color: var(--text-dark);
             padding: 1rem 2rem;
             border: none;
-            border-radius: 30px;
+            border-radius: var(--border-radius);
             font-size: 1.1rem;
             font-weight: bold;
             text-decoration: none;
@@ -154,10 +187,10 @@
 
         .btn-secondary {
             background: transparent;
-            color: white;
+            color: var(--text-light);
             padding: 1rem 2rem;
-            border: 2px solid white;
-            border-radius: 30px;
+            border: 2px solid var(--text-light);
+            border-radius: var(--border-radius);
             font-size: 1.1rem;
             font-weight: bold;
             text-decoration: none;
@@ -166,26 +199,36 @@
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.4);
+            background: #e6a000;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 179, 0, 0.4);
         }
 
         .btn-secondary:hover {
-            background: white;
-            color: #1e3c72;
+            background: var(--text-light);
+            color: var(--primary-color);
         }
 
         /* Features Section */
         .features {
             padding: 80px 0;
-            background: white;
+            background: var(--bg-light);
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
             margin-bottom: 3rem;
-            color: #1e3c72;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: #666;
         }
 
         .features-grid {
@@ -198,32 +241,43 @@
         .feature-card {
             background: white;
             padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: var(--border-radius);
             text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
         }
 
         .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
         }
 
         .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 2rem;
+            color: var(--text-light);
         }
 
         .feature-card h3 {
             font-size: 1.5rem;
+            color: var(--primary-color);
             margin-bottom: 1rem;
-            color: #1e3c72;
+        }
+
+        .feature-card p {
+            color: #666;
         }
 
         /* How It Works */
         .how-it-works {
             padding: 80px 0;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: white;
         }
 
         .steps {
@@ -235,34 +289,38 @@
 
         .step {
             text-align: center;
-            padding: 1.5rem;
+            position: relative;
         }
 
         .step-number {
             width: 60px;
             height: 60px;
-            background: linear-gradient(45deg, #ff6b35, #f7931e);
-            color: white;
+            background: var(--accent-color);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin: 0 auto 1rem;
             font-size: 1.5rem;
             font-weight: bold;
-            margin: 0 auto 1rem;
+            color: var(--text-dark);
         }
 
         .step h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: #1e3c72;
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .step p {
+            color: #666;
         }
 
         /* Stats Section */
         .stats {
             padding: 80px 0;
-            background: #1e3c72;
-            color: white;
+            background: var(--primary-color);
+            color: var(--text-light);
         }
 
         .stats-grid {
@@ -274,51 +332,20 @@
 
         .stat-item h3 {
             font-size: 3rem;
+            color: var(--accent-color);
             margin-bottom: 0.5rem;
-            color: #ff6b35;
         }
 
         .stat-item p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        /* Testimonials */
-        .testimonials {
-            padding: 80px 0;
-            background: white;
-        }
-
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .testimonial {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 15px;
-            border-left: 4px solid #ff6b35;
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 1rem;
             font-size: 1.1rem;
-        }
-
-        .testimonial-author {
-            font-weight: bold;
-            color: #1e3c72;
+            opacity: 0.9;
         }
 
         /* CTA Section */
         .cta-section {
             padding: 80px 0;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
+            background: var(--gradient);
+            color: var(--text-light);
             text-align: center;
         }
 
@@ -328,16 +355,16 @@
         }
 
         .cta-section p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 2rem;
             opacity: 0.9;
         }
 
         /* Footer */
         footer {
-            background: #1a1a1a;
-            color: white;
-            padding: 40px 0 20px;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            padding: 60px 0 20px;
         }
 
         .footer-content {
@@ -348,83 +375,33 @@
         }
 
         .footer-section h3 {
+            color: var(--accent-color);
             margin-bottom: 1rem;
-            color: #ff6b35;
         }
 
-        .footer-section a {
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
             color: #ccc;
             text-decoration: none;
-            display: block;
-            margin-bottom: 0.5rem;
             transition: color 0.3s ease;
         }
 
-        .footer-section a:hover {
-            color: #ff6b35;
+        .footer-section ul li a:hover {
+            color: var(--accent-color);
         }
 
         .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
             border-top: 1px solid #333;
+            padding-top: 20px;
+            text-align: center;
             color: #ccc;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .mobile-menu {
-                display: flex;
-            }
-
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-content p {
-                font-size: 1.1rem;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 15px;
-            }
-
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-
-            .btn-primary,
-            .btn-secondary {
-                padding: 0.8rem 1.5rem;
-                font-size: 1rem;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
         }
 
         /* Animations */
@@ -439,50 +416,159 @@
             }
         }
 
-        .fade-in-up {
-            animation: fadeInUp 0.6s ease forwards;
-        }
-
-        /* Loading Animation */
-        .loading {
+        .fade-in {
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(30px);
             transition: all 0.6s ease;
         }
 
-        .loading.loaded {
+        .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+        }
+
+        /* Mobile Navigation */
+        .nav-mobile {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: var(--primary-color);
+            padding: 1rem;
+            box-shadow: var(--shadow);
+        }
+
+        .nav-mobile.active {
+            display: block;
+        }
+
+        .nav-mobile ul {
+            list-style: none;
+        }
+
+        .nav-mobile ul li {
+            margin-bottom: 1rem;
+        }
+
+        .nav-mobile ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        /* Demo Grid */
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 2px;
+            max-width: 500px;
+            margin: 2rem auto;
+            background: white;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .demo-cell {
+            aspect-ratio: 1;
+            background: var(--bg-light);
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .demo-cell:hover {
+            background: var(--accent-color);
+            color: var(--text-dark);
+        }
+
+        .demo-cell.header {
+            background: var(--primary-color);
+            color: var(--text-light);
+        }
+
+        .demo-cell.selected {
+            background: var(--secondary-color);
+            color: var(--text-light);
         }
     </style>
 </head>
 <body>
-    <header>
+    <header id="header">
         <nav class="container">
-            <a href="#" class="logo">🏈 GameDay Squares</a>
+            <div class="logo">🏈 GameDay Squares</div>
             <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
                 <li><a href="#features">Features</a></li>
                 <li><a href="#how-it-works">How It Works</a></li>
-                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#stats">Stats</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="cta-button">Join Now</a></li>
             </ul>
-            <a href="#signup" class="cta-button">Get Started</a>
-            <div class="mobile-menu">
+            <div class="mobile-menu" id="mobile-menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
         </nav>
+        <div class="nav-mobile" id="nav-mobile">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#stats">Stats</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="cta-button">Join Now</a></li>
+            </ul>
+        </div>
     </header>
 
     <main>
-        <section class="hero">
+        <section id="home" class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h1>Win Big with NFL Squares</h1>
-                    <p>Join thousands of players in the most exciting NFL squares betting platform. Weekly games, instant payouts, and the thrill of victory await!</p>
+                    <h1>Win Big Every Sunday</h1>
+                    <p>Join thousands of players in the ultimate NFL squares betting experience. Easy to play, exciting to win!</p>
                     <div class="hero-buttons">
-                        <a href="#signup" class="btn-primary">Start Playing Now</a>
+                        <a href="#" class="btn-primary">Start Playing Now</a>
                         <a href="#how-it-works" class="btn-secondary">Learn How</a>
                     </div>
                 </div>
@@ -491,37 +577,40 @@
 
         <section id="features" class="features">
             <div class="container">
-                <h2 class="section-title">Why Choose GameDay Squares?</h2>
+                <div class="section-title fade-in">
+                    <h2>Why Choose GameDay Squares?</h2>
+                    <p>Experience the most user-friendly and exciting NFL squares platform</p>
+                </div>
                 <div class="features-grid">
-                    <div class="feature-card loading">
+                    <div class="feature-card fade-in">
                         <div class="feature-icon">⚡</div>
-                        <h3>Instant Payouts</h3>
-                        <p>Get paid immediately when you win. No waiting, no hassle. Your winnings are transferred instantly to your account.</p>
+                        <h3>Instant Setup</h3>
+                        <p>Create your squares game in under 60 seconds. No complicated setup required.</p>
                     </div>
-                    <div class="feature-card loading">
-                        <div class="feature-icon">🏆</div>
-                        <h3>Weekly Tournaments</h3>
-                        <p>Join exciting weekly tournaments with bigger prize pools and compete against players from across the country.</p>
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">💰</div>
+                        <h3>Secure Payments</h3>
+                        <p>Bank-grade security with instant payouts. Your winnings are always protected.</p>
                     </div>
-                    <div class="feature-card loading">
+                    <div class="feature-card fade-in">
                         <div class="feature-icon">📱</div>
                         <h3>Mobile Optimized</h3>
-                        <p>Play anywhere, anytime. Our platform is fully optimized for mobile devices with a seamless user experience.</p>
+                        <p>Play anywhere, anytime. Our platform works perfectly on all devices.</p>
                     </div>
-                    <div class="feature-card loading">
-                        <div class="feature-icon">🔒</div>
-                        <h3>Secure & Licensed</h3>
-                        <p>Your money and data are safe with us. We use bank-level encryption and are fully licensed and regulated.</p>
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Real-Time Updates</h3>
+                        <p>Live game tracking with instant notifications when you win.</p>
                     </div>
-                    <div class="feature-card loading">
+                    <div class="feature-card fade-in">
                         <div class="feature-icon">👥</div>
-                        <h3>Community Driven</h3>
-                        <p>Join a vibrant community of NFL fans. Chat, share strategies, and celebrate wins together.</p>
+                        <h3>Social Gaming</h3>
+                        <p>Play with friends, family, or join public games with players nationwide.</p>
                     </div>
-                    <div class="feature-card loading">
-                        <div class="feature-icon">📊</div>
-                        <h3>Live Statistics</h3>
-                        <p>Track your performance with detailed statistics and analytics. See your win rate, profits, and more.</p>
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">🏆</div>
+                        <h3>Multiple Prizes</h3>
+                        <p>Win at the end of each quarter and the final game. More chances to win!</p>
                     </div>
                 </div>
             </div>
@@ -529,81 +618,114 @@
 
         <section id="how-it-works" class="how-it-works">
             <div class="container">
-                <h2 class="section-title">How It Works</h2>
+                <div class="section-title fade-in">
+                    <h2>How It Works</h2>
+                    <p>Get started in three simple steps</p>
+                </div>
+                <div class="demo-grid fade-in">
+                    <div class="demo-cell header"></div>
+                    <div class="demo-cell header">0</div>
+                    <div class="demo-cell header">1</div>
+                    <div class="demo-cell header">2</div>
+                    <div class="demo-cell header">3</div>
+                    <div class="demo-cell header">4</div>
+                    <div class="demo-cell header">5</div>
+                    <div class="demo-cell header">6</div>
+                    <div class="demo-cell header">7</div>
+                    <div class="demo-cell header">8</div>
+                    <div class="demo-cell header">9</div>
+                    <div class="demo-cell header">0</div>
+                    <div class="demo-cell selected">John</div>
+                    <div class="demo-cell">Mike</div>
+                    <div class="demo-cell">Sara</div>
+                    <div class="demo-cell">Tom</div>
+                    <div class="demo-cell">Lisa</div>
+                    <div class="demo-cell">Dan</div>
+                    <div class="demo-cell">Amy</div>
+                    <div class="demo-cell">Joe</div>
+                    <div class="demo-cell header">1</div>
+                    <div class="demo-cell">Kate</div>
+                    <div class="demo-cell">Ben</div>
+                    <div class="demo-cell">Sue</div>
+                    <div class="demo-cell">Jim</div>
+                    <div class="demo-cell">Pat</div>
+                    <div class="demo-cell">Rob</div>
+                    <div class="demo-cell">Ann</div>
+                    <div class="demo-cell">Max</div>
+                    <div class="demo-cell header">2</div>
+                    <div class="demo-cell">Tim</div>
+                    <div class="demo-cell">Eva</div>
+                    <div class="demo-cell">Leo</div>
+                    <div class="demo-cell">Mia</div>
+                    <div class="demo-cell">Sam</div>
+                    <div class="demo-cell">Zoe</div>
+                    <div class="demo-cell">Ian</div>
+                    <div class="demo-cell">Ava</div>
+                    <div class="demo-cell header">3</div>
+                    <div class="demo-cell">Ray</div>
+                    <div class="demo-cell">Ivy</div>
+                    <div class="demo-cell">Cal</div>
+                    <div class="demo-cell">Una</div>
+                    <div class="demo-cell">Eli</div>
+                    <div class="demo-cell">Fay</div>
+                    <div class="demo-cell">Gus</div>
+                    <div class="demo-cell">Bea</div>
+                </div>
                 <div class="steps">
-                    <div class="step loading">
+                    <div class="step fade-in">
                         <div class="step-number">1</div>
-                        <h3>Sign Up</h3>
-                        <p>Create your free account in seconds. No credit checks, just basic information to get started.</p>
+                        <h3>Choose Your Squares</h3>
+                        <p>Pick your lucky squares on the 10x10 grid. Each square represents a potential winning combination.</p>
                     </div>
-                    <div class="step loading">
+                    <div class="step fade-in">
                         <div class="step-number">2</div>
-                        <h3>Choose Your Square</h3>
-                        <p>Pick your lucky squares from available NFL games. Each square represents a unique score combination.</p>
+                        <h3>Watch the Game</h3>
+                        <p>Sit back and enjoy the NFL action. Numbers are randomly assigned after all squares are filled.</p>
                     </div>
-                    <div class="step loading">
+                    <div class="step fade-in">
                         <div class="step-number">3</div>
-                        <h3>Watch & Win</h3>
-                        <p>Enjoy the game and watch your squares. Winners are determined by the last digit of each team's score.</p>
-                    </div>
-                    <div class="step loading">
-                        <div class="step-number">4</div>
-                        <h3>Get Paid</h3>
-                        <p>Win instantly! Payouts are processed immediately after each quarter and at the end of the game.</p>
+                        <h3>Win & Get Paid</h3>
+                        <p>Win based on the last digit of each team's score at the end of each quarter. Instant payouts!</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="stats">
+        <section id="stats" class="stats">
             <div class="container">
-                <h2 class="section-title">Join Thousands of Winners</h2>
+                <div class="section-title fade-in">
+                    <h2>Join the Winning Community</h2>
+                    <p>Thousands of players trust GameDay Squares every week</p>
+                </div>
                 <div class="stats-grid">
-                    <div class="stat-item loading">
-                        <h3>50K+</h3>
+                    <div class="stat-item fade-in">
+                        <h3 data-count="50000">0</h3>
                         <p>Active Players</p>
                     </div>
-                    <div class="stat-item loading">
-                        <h3>$2M+</h3>
-                        <p>Paid Out</p>
+                    <div class="stat-item fade-in">
+                        <h3 data-count="2500000">$0</h3>
+                        <p>Total Winnings Paid</p>
                     </div>
-                    <div class="stat-item loading">
-                        <h3>98%</h3>
-                        <p>Satisfaction Rate</p>
+                    <div class="stat-item fade-in">
+                        <h3 data-count="15000">0</h3>
+                        <p>Games Completed</p>
                     </div>
-                    <div class="stat-item loading">
-                        <h3>24/7</h3>
-                        <p>Customer Support</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="testimonials" class="testimonials">
-            <div class="container">
-                <h2 class="section-title">What Players Are Saying</h2>
-                <div class="testimonial-grid">
-                    <div class="testimonial loading">
-                        <p class="testimonial-text">"I've been playing NFL squares for years, but GameDay Squares takes it to the next level. The instant payouts are amazing!"</p>
-                        <p class="testimonial-author">- Sarah M., Chicago</p>
-                    </div>
-                    <div class="testimonial loading">
-                        <p class="testimonial-text">"The mobile app is fantastic. I can play from anywhere and never miss a game. Already won $500 this season!"</p>
-                        <p class="testimonial-author">- Mike D., Dallas</p>
-                    </div>
-                    <div class="testimonial loading">
-                        <p class="testimonial-text">"Safe, secure, and so much fun! The community aspect makes watching games even more exciting."</p>
-                        <p class="testimonial-author">- Jennifer L., New York</p>
+                    <div class="stat-item fade-in">
+                        <h3>4.9★</h3>
+                        <p>User Rating</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="signup" class="cta-section">
-            <div class="container">
-                <h2>Ready to Start Winning?</h2>
-                <p>Join GameDay Squares today and turn every NFL game into an opportunity to win big!</p>
-                <a href="#" class="btn-primary" id="signup-btn">Create Free Account</a>
+        <section class="cta-section">
+            <div class="container fade-in">
+                <h2>Ready to Win Big?</h2>
+                <p>Join thousands of players and start winning today. It's free to sign up!</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn-primary">Create Free Account</a>
+                    <a href="#" class="btn-secondary">View Live Games</a>
+                </div>
             </div>
         </section>
     </main>
@@ -613,37 +735,61 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>GameDay Squares</h3>
-                    <p>The premier destination for NFL squares betting. Safe, secure, and incredibly fun.</p>
+                    <p>The ultimate NFL squares betting platform. Join thousands of players every week and win big!</p>
                 </div>
                 <div class="footer-section">
                     <h3>Quick Links</h3>
-                    <a href="#">How to Play</a>
-                    <a href="#">Rules & Payouts</a>
-                    <a href="#">Responsible Gaming</a>
-                    <a href="#">FAQ</a>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#stats">Statistics</a></li>
+                    </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Support</h3>
-                    <a href="#">Help Center</a>
-                    <a href="#">Contact Us</a>
-                    <a href="#">Live Chat</a>
-                    <a href="#">Report Issue</a>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Rules</a></li>
+                    </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Legal</h3>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">License Info</a>
-                    <a href="#">Security</a>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Responsible Gaming</a></li>
+                        <li><a href="#">Age Verification</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 GameDay Squares. All rights reserved. Play responsibly. Must be 21+ to participate.</p>
+                <p>&copy; 2024 GameDay Squares. All rights reserved. Play responsibly. 18+</p>
             </div>
         </div>
     </footer>
 
     <script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMobile = document.getElementById('nav-mobile');
+
+        mobileMenu.addEventListener('click', () => {
+            navMobile.classList.toggle('active');
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -654,176 +800,88 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
+                    // Close mobile menu if open
+                    navMobile.classList.remove('active');
                 }
             });
         });
 
-        // Mobile menu toggle
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-
-        mobileMenu.addEventListener('click', () => {
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-        });
-
-        // Intersection Observer for animations
+        // Intersection Observer for fade-in animations
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            rootMargin: '0px 0px -100px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('loaded');
+                    entry.target.classList.add('visible');
                 }
             });
         }, observerOptions);
 
-        // Observe all loading elements
-        document.querySelectorAll('.loading').forEach(el => {
+        document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
         });
 
-        // Counter animation for stats
-        function animateCounter(element, target) {
-            let count = 0;
-            const increment = target / 100;
-            const timer = setInterval(() => {
-                count += increment;
-                if (count >= target) {
-                    count = target;
-                    clearInterval(timer);
-                }
+        // Animated counter for stats
+        const animateCounters = () => {
+            const counters = document.querySelectorAll('[data-count]');
+            counters.forEach(counter => {
+                const target = parseInt(counter.dataset.count);
+                const current = parseInt(counter.innerText.replace(/[^\d]/g, ''));
+                const increment = Math.ceil(target / 100);
                 
-                if (target >= 1000000) {
-                    element.textContent = '$' + (count / 1000000).toFixed(1) + 'M+';
-                } else if (target >= 1000) {
-                    element.textContent = (count / 1000).toFixed(0) + 'K+';
-                } else if (target >= 90) {
-                    element.textContent = count.toFixed(0) + '%';
-                } else {
-                    element.textContent = count.toFixed(0);
+                if (current < target) {
+                    const newValue = Math.min(current + increment, target);
+                    if (counter.dataset.count.includes('2500000')) {
+                        counter.innerText = '$' + newValue.toLocaleString();
+                    } else {
+                        counter.innerText = newValue.toLocaleString();
+                    }
+                    setTimeout(animateCounters, 20);
                 }
-            }, 20);
-        }
+            });
+        };
 
-        // Animate stats when they come into view
+        // Start counter animation when stats section is visible
         const statsObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    const statItems = entry.target.querySelectorAll('.stat-item h3');
-                    const targets = [50000, 2000000, 98, 24];
-                    
-                    statItems.forEach((item, index) => {
-                        setTimeout(() => {
-                            animateCounter(item, targets[index]);
-                        }, index * 200);
-                    });
-                    
+                    animateCounters();
                     statsObserver.unobserve(entry.target);
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.5 });
 
-        const statsSection = document.querySelector('.stats');
+        const statsSection = document.getElementById('stats');
         if (statsSection) {
             statsObserver.observe(statsSection);
         }
 
-        // Add click tracking for CTA buttons
-        document.querySelectorAll('.cta-button, .btn-primary, .btn-secondary').forEach(button => {
-            button.addEventListener('click', function(e) {
-                // Add ripple effect
-                const ripple = document.createElement('span');
-                ripple.style.position = 'absolute';
-                ripple.style.borderRadius = '50%';
-                ripple.style.background = 'rgba(255,255,255,0.6)';
-                ripple.style.transform = 'scale(0)';
-                ripple.style.animation = 'ripple 0.6s linear';
-                ripple.style.left = (e.clientX - this.offsetLeft) + 'px';
-                ripple.style.top = (e.clientY - this.offsetTop) + 'px';
-                
-                this.style.position = 'relative';
-                this.style.overflow = 'hidden';
-                this.appendChild(ripple);
-                
-                setTimeout(() => {
-                    ripple.remove();
-                }, 600);
+        // Demo grid interaction
+        document.querySelectorAll('.demo-cell:not(.header)').forEach(cell => {
+            cell.addEventListener('click', () => {
+                // Remove previous selection
+                document.querySelectorAll('.demo-cell.selected').forEach(selected => {
+                    selected.classList.remove('selected');
+                });
+                // Add selection to clicked cell
+                cell.classList.add('selected');
+            });
+        });
 
-                // Simulate signup process
-                if (this.id === 'signup-btn' || this.textContent.includes('Get Started') || this.textContent.includes('Start Playing')) {
+        // Form handling (placeholder)
+        document.querySelectorAll('.cta-button, .btn-primary').forEach(button => {
+            button.addEventListener('click', (e) => {
+                if (button.getAttribute('href') === '#') {
                     e.preventDefault();
-                    this.textContent = 'Loading...';
-                    this.style.opacity = '0.8';
-                    
-                    setTimeout(() => {
-                        alert('Welcome to GameDay Squares! Your account setup would begin here.');
-                        this.textContent = 'Create Free Account';
-                        this.style.opacity = '1';
-                    }, 2000);
+                    alert('Sign up functionality would be implemented here!');
                 }
             });
         });
 
-        // Add CSS for ripple animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes ripple {
-                to {
-                    transform: scale(4);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(style);
-
-        // Header background change on scroll
+        // Parallax effect for hero section
         window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-            }
-        });
-
-        // Preload critical images and optimize performance
-        window.addEventListener('load', () => {
-            // Mark all elements as loaded for any missed by intersection observer
-            document.querySelectorAll('.loading').forEach(el => {
-                el.classList.add('loaded');
-            });
-        });
-
-        // Add form validation for email signup (if implemented)
-        function validateEmail(email) {
-            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return re.test(email);
-        }
-
-        // Keyboard navigation support
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Tab') {
-                document.body.classList.add('keyboard-navigation');
-            }
-        });
-
-        document.addEventListener('mousedown', () => {
-            document.body.classList.remove('keyboard-navigation');
-        });
-
-        // Add focus styles for keyboard navigation
-        const focusStyle = document.createElement('style');
-        focusStyle.textContent = `
-            .keyboard-navigation button:focus,
-            .keyboard-navigation a:focus {
-                outline: 2px solid #ff6b35;
-                outline-offset: 2px;
-            }
-        `;
-        document.head.appendChild(focusStyle);
-    </script>
-</body>
-</html>
+            const scrolled = window.pageYOffset;
+            const
