@@ -1,0 +1,26 @@
+<svg viewBox="0 0 300 340" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="shieldBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1A1A1A"/>
+      <stop offset="100%" style="stop-color:#0A0A0A"/>
+    </linearGradient>
+  </defs>
+  <path d="M150,10 L280,60 L280,180 Q280,290 150,330 Q20,290 20,180 L20,60 Z" fill="url(#shieldBg)" stroke="#FF6B00" stroke-width="4"/>
+  <path d="M150,22 L268,68 L268,180 Q268,278 150,316 Q32,278 32,180 L32,68 Z" fill="none" stroke="#00D4FF" stroke-width="1.5" opacity="0.5"/>
+  <path d="M150,10 L280,60 L268,68 L150,22 L32,68 L20,60 Z" fill="#FF6B00"/>
+  <text x="150" y="105" font-family="Arial Black, sans-serif" font-size="36" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">GAMEDAY</text>
+  <text x="150" y="140" font-family="Arial Black, sans-serif" font-size="24" font-weight="900" fill="#00D4FF" text-anchor="middle" letter-spacing="4">SQUARES</text>
+  <line x1="50" y1="155" x2="250" y2="155" stroke="#FF6B00" stroke-width="2"/>
+  <rect x="105" y="168" width="22" height="22" rx="3" fill="#FF6B00" opacity="0.9"/>
+  <rect x="130" y="168" width="22" height="22" rx="3" fill="#1A1A1A" stroke="#00D4FF" stroke-width="1.5"/>
+  <rect x="155" y="168" width="22" height="22" rx="3" fill="#00D4FF" opacity="0.9"/>
+  <rect x="105" y="193" width="22" height="22" rx="3" fill="#1A1A1A" stroke="#FF6B00" stroke-width="1.5"/>
+  <rect x="130" y="193" width="22" height="22" rx="3" fill="#FF6B00" opacity="0.9"/>
+  <rect x="155" y="193" width="22" height="22" rx="3" fill="#1A1A1A" stroke="#00D4FF" stroke-width="1.5"/>
+  <rect x="105" y="218" width="22" height="22" rx="3" fill="#00D4FF" opacity="0.9"/>
+  <rect x="130" y="218" width="22" height="22" rx="3" fill="#1A1A1A" stroke="#FF6B00" stroke-width="1.5"/>
+  <rect x="155" y="218" width="22" height="22" rx="3" fill="#FF6B00" opacity="0.9"/>
+  <text x="60" y="290" font-size="20" fill="#FF6B00" text-anchor="middle">★</text>
+  <text x="150" y="305" font-size="20" fill="#00D4FF" text-anchor="middle">★</text>
+  <text x="240" y="290" font-size="20" fill="#FF6B00" text-anchor="middle">★</text>
+</svg>
